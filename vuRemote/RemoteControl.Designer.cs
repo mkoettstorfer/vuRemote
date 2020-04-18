@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoteForm));
-            this.remotePictureBox = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +42,58 @@
             this.wakeUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.webinterfaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oscamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.volumeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.audioLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeOutLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.RemotePanel = new System.Windows.Forms.Panel();
+            this.imageButton40 = new MSoft.ImageButton();
             this.imageButton43 = new MSoft.ImageButton();
+            this.remotePictureBox = new System.Windows.Forms.PictureBox();
+            this.ProgrammListPanel = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabText = new System.Windows.Forms.TabPage();
+            this.epgButton = new System.Windows.Forms.Button();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
+            this.tabVorschau = new System.Windows.Forms.TabPage();
+            this.epgUserControl = new EPGUserControl();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ePGEinträgeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ePGSucheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tvInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.googleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iMDbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.streamAnsehenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.audioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.audioMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.serviceBox = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.prevButton = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.timeBox = new System.Windows.Forms.TextBox();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.refreshTimer = new System.Windows.Forms.Timer(this.components);
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
+            this.channelImageList = new System.Windows.Forms.ImageList(this.components);
+            this.audioTimer = new System.Windows.Forms.Timer(this.components);
+            this.imageButton11 = new MSoft.ImageButton();
+            this.imageButton10 = new MSoft.ImageButton();
+            this.imageButton1 = new MSoft.ImageButton();
             this.imageButton42 = new MSoft.ImageButton();
             this.imageButton41 = new MSoft.ImageButton();
-            this.imageButton40 = new MSoft.ImageButton();
             this.imageButton39 = new MSoft.ImageButton();
             this.imageButton38 = new MSoft.ImageButton();
             this.imageButton37 = new MSoft.ImageButton();
@@ -78,8 +121,6 @@
             this.imageButton13 = new MSoft.ImageButton();
             this.imageButton14 = new MSoft.ImageButton();
             this.imageButton15 = new MSoft.ImageButton();
-            this.imageButton10 = new MSoft.ImageButton();
-            this.imageButton11 = new MSoft.ImageButton();
             this.imageButton12 = new MSoft.ImageButton();
             this.imageButton7 = new MSoft.ImageButton();
             this.imageButton8 = new MSoft.ImageButton();
@@ -89,22 +130,18 @@
             this.imageButton4 = new MSoft.ImageButton();
             this.imageButton3 = new MSoft.ImageButton();
             this.imageButton2 = new MSoft.ImageButton();
-            this.imageButton1 = new MSoft.ImageButton();
-            ((System.ComponentModel.ISupportInitialize)(this.remotePictureBox)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.RemotePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.remotePictureBox)).BeginInit();
+            this.ProgrammListPanel.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabText.SuspendLayout();
+            this.tabVorschau.SuspendLayout();
+            this.contextMenuStrip.SuspendLayout();
+            this.HeaderPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // remotePictureBox
-            // 
-            this.remotePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.remotePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("remotePictureBox.Image")));
-            this.remotePictureBox.Location = new System.Drawing.Point(0, 24);
-            this.remotePictureBox.Margin = new System.Windows.Forms.Padding(4);
-            this.remotePictureBox.Name = "remotePictureBox";
-            this.remotePictureBox.Size = new System.Drawing.Size(177, 692);
-            this.remotePictureBox.TabIndex = 0;
-            this.remotePictureBox.TabStop = false;
             // 
             // imageList1
             // 
@@ -121,7 +158,7 @@
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.mainMenuStrip.Size = new System.Drawing.Size(177, 24);
+            this.mainMenuStrip.Size = new System.Drawing.Size(859, 24);
             this.mainMenuStrip.TabIndex = 1;
             this.mainMenuStrip.Text = "menuStrip1";
             // 
@@ -189,6 +226,10 @@
             // 
             this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.einstellungenToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.webinterfaceToolStripMenuItem,
+            this.oscamToolStripMenuItem,
+            this.toolStripMenuItem3,
             this.infoToolStripMenuItem,
             this.überToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
@@ -201,6 +242,30 @@
             this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(142, 6);
+            // 
+            // webinterfaceToolStripMenuItem
+            // 
+            this.webinterfaceToolStripMenuItem.Name = "webinterfaceToolStripMenuItem";
+            this.webinterfaceToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.webinterfaceToolStripMenuItem.Text = "Webinterface";
+            this.webinterfaceToolStripMenuItem.Click += new System.EventHandler(this.webinterfaceToolStripMenuItem_Click);
+            // 
+            // oscamToolStripMenuItem
+            // 
+            this.oscamToolStripMenuItem.Name = "oscamToolStripMenuItem";
+            this.oscamToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.oscamToolStripMenuItem.Text = "Oscam";
+            this.oscamToolStripMenuItem.Click += new System.EventHandler(this.oscamToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(142, 6);
             // 
             // infoToolStripMenuItem
             // 
@@ -219,30 +284,423 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.volumeLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 694);
+            this.volumeLabel,
+            this.toolStripStatusLabel,
+            this.audioLabel,
+            this.timeOutLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 693);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(177, 22);
+            this.statusStrip.Size = new System.Drawing.Size(859, 22);
             this.statusStrip.TabIndex = 45;
             this.statusStrip.Text = "statusStrip1";
             // 
             // volumeLabel
             // 
+            this.volumeLabel.AutoSize = false;
             this.volumeLabel.Name = "volumeLabel";
-            this.volumeLabel.Size = new System.Drawing.Size(30, 17);
+            this.volumeLabel.Size = new System.Drawing.Size(70, 17);
             this.volumeLabel.Text = "Vol.:";
+            this.volumeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.AutoSize = false;
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(200, 17);
+            this.toolStripStatusLabel.Text = "Kanal:";
+            this.toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripStatusLabel.Click += new System.EventHandler(this.toolStripStatusLabel_Click);
+            // 
+            // audioLabel
+            // 
+            this.audioLabel.AutoSize = false;
+            this.audioLabel.Name = "audioLabel";
+            this.audioLabel.Size = new System.Drawing.Size(245, 17);
+            this.audioLabel.Text = "Audio";
+            // 
+            // timeOutLabel
+            // 
+            this.timeOutLabel.Name = "timeOutLabel";
+            this.timeOutLabel.Size = new System.Drawing.Size(17, 17);
+            this.timeOutLabel.Text = "--";
+            // 
+            // RemotePanel
+            // 
+            this.RemotePanel.Controls.Add(this.imageButton40);
+            this.RemotePanel.Controls.Add(this.imageButton43);
+            this.RemotePanel.Controls.Add(this.remotePictureBox);
+            this.RemotePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RemotePanel.Location = new System.Drawing.Point(0, 24);
+            this.RemotePanel.Name = "RemotePanel";
+            this.RemotePanel.Size = new System.Drawing.Size(181, 669);
+            this.RemotePanel.TabIndex = 3;
+            // 
+            // imageButton40
+            // 
+            this.imageButton40.BackColor = System.Drawing.Color.Transparent;
+            this.imageButton40.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButton40.Location = new System.Drawing.Point(41, 286);
+            this.imageButton40.Name = "imageButton40";
+            this.imageButton40.Size = new System.Drawing.Size(27, 24);
+            this.imageButton40.TabIndex = 43;
+            this.imageButton40.Tag = "previous";
+            this.imageButton40.Text = "imageButton40";
             // 
             // imageButton43
             // 
             this.imageButton43.BackColor = System.Drawing.Color.Transparent;
             this.imageButton43.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageButton43.Location = new System.Drawing.Point(74, 346);
+            this.imageButton43.Location = new System.Drawing.Point(74, 316);
             this.imageButton43.Name = "imageButton43";
             this.imageButton43.Size = new System.Drawing.Size(27, 24);
             this.imageButton43.TabIndex = 44;
             this.imageButton43.Tag = "down";
             this.imageButton43.Text = "imageButton43";
             this.imageButton43.Click += new System.EventHandler(this.ControlButton_Click);
+            // 
+            // remotePictureBox
+            // 
+            this.remotePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.remotePictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.remotePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("remotePictureBox.Image")));
+            this.remotePictureBox.Location = new System.Drawing.Point(0, 0);
+            this.remotePictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.remotePictureBox.Name = "remotePictureBox";
+            this.remotePictureBox.Size = new System.Drawing.Size(177, 669);
+            this.remotePictureBox.TabIndex = 1;
+            this.remotePictureBox.TabStop = false;
+            // 
+            // ProgrammListPanel
+            // 
+            this.ProgrammListPanel.Controls.Add(this.tabControl1);
+            this.ProgrammListPanel.Controls.Add(this.listView1);
+            this.ProgrammListPanel.Controls.Add(this.HeaderPanel);
+            this.ProgrammListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProgrammListPanel.Location = new System.Drawing.Point(181, 24);
+            this.ProgrammListPanel.Name = "ProgrammListPanel";
+            this.ProgrammListPanel.Size = new System.Drawing.Size(678, 669);
+            this.ProgrammListPanel.TabIndex = 47;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabText);
+            this.tabControl1.Controls.Add(this.tabVorschau);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControl1.Location = new System.Drawing.Point(0, 478);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(678, 191);
+            this.tabControl1.TabIndex = 7;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabControl1_SelectedIndexChanged);
+            // 
+            // tabText
+            // 
+            this.tabText.Controls.Add(this.epgButton);
+            this.tabText.Controls.Add(this.richTextBox);
+            this.tabText.Location = new System.Drawing.Point(4, 22);
+            this.tabText.Name = "tabText";
+            this.tabText.Padding = new System.Windows.Forms.Padding(3);
+            this.tabText.Size = new System.Drawing.Size(670, 165);
+            this.tabText.TabIndex = 0;
+            this.tabText.Text = "Text";
+            this.tabText.UseVisualStyleBackColor = true;
+            // 
+            // epgButton
+            // 
+            this.epgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.epgButton.AutoSize = true;
+            this.epgButton.FlatAppearance.BorderSize = 0;
+            this.epgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.epgButton.Location = new System.Drawing.Point(604, 13);
+            this.epgButton.Margin = new System.Windows.Forms.Padding(0);
+            this.epgButton.Name = "epgButton";
+            this.epgButton.Size = new System.Drawing.Size(41, 25);
+            this.epgButton.TabIndex = 6;
+            this.epgButton.Text = "EPG";
+            this.epgButton.UseVisualStyleBackColor = true;
+            this.epgButton.Click += new System.EventHandler(this.OnEPGClick);
+            // 
+            // richTextBox
+            // 
+            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.richTextBox.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBox.Size = new System.Drawing.Size(664, 159);
+            this.richTextBox.TabIndex = 5;
+            this.richTextBox.Text = "";
+            // 
+            // tabVorschau
+            // 
+            this.tabVorschau.Controls.Add(this.epgUserControl);
+            this.tabVorschau.Location = new System.Drawing.Point(4, 22);
+            this.tabVorschau.Name = "tabVorschau";
+            this.tabVorschau.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVorschau.Size = new System.Drawing.Size(670, 165);
+            this.tabVorschau.TabIndex = 1;
+            this.tabVorschau.Text = "Vorschau";
+            this.tabVorschau.UseVisualStyleBackColor = true;
+            // 
+            // epgUserControl
+            // 
+            this.epgUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.epgUserControl.Location = new System.Drawing.Point(3, 3);
+            this.epgUserControl.Name = "epgUserControl";
+            this.epgUserControl.Size = new System.Drawing.Size(664, 159);
+            this.epgUserControl.TabIndex = 0;
+            // 
+            // listView1
+            // 
+            this.listView1.ContextMenuStrip = this.contextMenuStrip;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.listView1.Location = new System.Drawing.Point(0, 33);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.OwnerDraw = true;
+            this.listView1.Size = new System.Drawing.Size(678, 636);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listView1_DrawColumnHeader);
+            this.listView1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listView1_DrawSubItem);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.OnSelectedIndexChange);
+            this.listView1.DoubleClick += new System.EventHandler(this.ChangeChannelClick);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.ePGEinträgeToolStripMenuItem,
+            this.ePGSucheToolStripMenuItem,
+            this.timerHinzufügenToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.tvInfoToolStripMenuItem,
+            this.googleToolStripMenuItem,
+            this.iMDbToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.streamAnsehenToolStripMenuItem,
+            this.audioToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            this.contextMenuStrip.Size = new System.Drawing.Size(169, 214);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = global::vuRemote.Properties.Resources.move;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(168, 22);
+            this.toolStripMenuItem4.Text = "Sender wechslen";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.ChangeChannelClick);
+            // 
+            // ePGEinträgeToolStripMenuItem
+            // 
+            this.ePGEinträgeToolStripMenuItem.Image = global::vuRemote.Properties.Resources.list;
+            this.ePGEinträgeToolStripMenuItem.Name = "ePGEinträgeToolStripMenuItem";
+            this.ePGEinträgeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ePGEinträgeToolStripMenuItem.Text = "EPG Einträge";
+            this.ePGEinträgeToolStripMenuItem.Click += new System.EventHandler(this.OnEPGClick);
+            // 
+            // ePGSucheToolStripMenuItem
+            // 
+            this.ePGSucheToolStripMenuItem.Name = "ePGSucheToolStripMenuItem";
+            this.ePGSucheToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ePGSucheToolStripMenuItem.Text = "EPG Suche";
+            this.ePGSucheToolStripMenuItem.Click += new System.EventHandler(this.ePGSucheToolStripMenuItem_Click);
+            // 
+            // timerHinzufügenToolStripMenuItem
+            // 
+            this.timerHinzufügenToolStripMenuItem.Enabled = false;
+            this.timerHinzufügenToolStripMenuItem.Image = global::vuRemote.Properties.Resources.watch;
+            this.timerHinzufügenToolStripMenuItem.Name = "timerHinzufügenToolStripMenuItem";
+            this.timerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.timerHinzufügenToolStripMenuItem.Text = "Timer hinzufügen";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(165, 6);
+            // 
+            // tvInfoToolStripMenuItem
+            // 
+            this.tvInfoToolStripMenuItem.Name = "tvInfoToolStripMenuItem";
+            this.tvInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.tvInfoToolStripMenuItem.Text = "Tv Info";
+            this.tvInfoToolStripMenuItem.Click += new System.EventHandler(this.tvInfoToolStripMenuItem_Click);
+            // 
+            // googleToolStripMenuItem
+            // 
+            this.googleToolStripMenuItem.Image = global::vuRemote.Properties.Resources.google;
+            this.googleToolStripMenuItem.Name = "googleToolStripMenuItem";
+            this.googleToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.googleToolStripMenuItem.Text = "Google";
+            this.googleToolStripMenuItem.Click += new System.EventHandler(this.OnGoogleClick);
+            // 
+            // iMDbToolStripMenuItem
+            // 
+            this.iMDbToolStripMenuItem.Image = global::vuRemote.Properties.Resources.imdb;
+            this.iMDbToolStripMenuItem.Name = "iMDbToolStripMenuItem";
+            this.iMDbToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.iMDbToolStripMenuItem.Text = "IMDb";
+            this.iMDbToolStripMenuItem.Click += new System.EventHandler(this.iMDbToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(165, 6);
+            // 
+            // streamAnsehenToolStripMenuItem
+            // 
+            this.streamAnsehenToolStripMenuItem.Image = global::vuRemote.Properties.Resources.play;
+            this.streamAnsehenToolStripMenuItem.Name = "streamAnsehenToolStripMenuItem";
+            this.streamAnsehenToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.streamAnsehenToolStripMenuItem.Text = "Stream ansehen";
+            this.streamAnsehenToolStripMenuItem.Click += new System.EventHandler(this.streamAnsehenToolStripMenuItem_Click);
+            // 
+            // audioToolStripMenuItem
+            // 
+            this.audioToolStripMenuItem.DropDown = this.audioMenuStrip;
+            this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
+            this.audioToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.audioToolStripMenuItem.Text = "Audio";
+            // 
+            // audioMenuStrip
+            // 
+            this.audioMenuStrip.Name = "audioMenuStrip";
+            this.audioMenuStrip.OwnerItem = this.audioToolStripMenuItem;
+            this.audioMenuStrip.Size = new System.Drawing.Size(61, 4);
+            // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeaderPanel.Controls.Add(this.serviceBox);
+            this.HeaderPanel.Controls.Add(this.panel3);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(678, 33);
+            this.HeaderPanel.TabIndex = 4;
+            // 
+            // serviceBox
+            // 
+            this.serviceBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.serviceBox.FormattingEnabled = true;
+            this.serviceBox.Location = new System.Drawing.Point(3, 4);
+            this.serviceBox.Name = "serviceBox";
+            this.serviceBox.Size = new System.Drawing.Size(232, 21);
+            this.serviceBox.TabIndex = 5;
+            this.serviceBox.SelectedIndexChanged += new System.EventHandler(this.serviceBox_SelectedIndexChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.prevButton);
+            this.panel3.Controls.Add(this.timeBox);
+            this.panel3.Controls.Add(this.nextButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(474, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(202, 31);
+            this.panel3.TabIndex = 4;
+            // 
+            // prevButton
+            // 
+            this.prevButton.ImageKey = "1390070508_173945.ico";
+            this.prevButton.ImageList = this.imageList2;
+            this.prevButton.Location = new System.Drawing.Point(75, 3);
+            this.prevButton.Name = "prevButton";
+            this.prevButton.Size = new System.Drawing.Size(23, 23);
+            this.prevButton.TabIndex = 0;
+            this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.OnDownButtonClick);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "1390070484_173949.ico");
+            this.imageList2.Images.SetKeyName(1, "1390070508_173945.ico");
+            this.imageList2.Images.SetKeyName(2, "1390070486_173956.ico");
+            this.imageList2.Images.SetKeyName(3, "google.png");
+            this.imageList2.Images.SetKeyName(4, "play.png");
+            // 
+            // timeBox
+            // 
+            this.timeBox.Enabled = false;
+            this.timeBox.Location = new System.Drawing.Point(103, 4);
+            this.timeBox.Name = "timeBox";
+            this.timeBox.Size = new System.Drawing.Size(60, 20);
+            this.timeBox.TabIndex = 2;
+            // 
+            // nextButton
+            // 
+            this.nextButton.ImageKey = "1390070484_173949.ico";
+            this.nextButton.ImageList = this.imageList2;
+            this.nextButton.Location = new System.Drawing.Point(169, 3);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(23, 23);
+            this.nextButton.TabIndex = 1;
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.OnUpButtonClick);
+            // 
+            // refreshTimer
+            // 
+            this.refreshTimer.Tick += new System.EventHandler(this.refreshTimer_Tick);
+            // 
+            // updateTimer
+            // 
+            this.updateTimer.Interval = 30000;
+            this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
+            // 
+            // channelImageList
+            // 
+            this.channelImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            this.channelImageList.ImageSize = new System.Drawing.Size(40, 21);
+            this.channelImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // audioTimer
+            // 
+            this.audioTimer.Interval = 300;
+            this.audioTimer.Tick += new System.EventHandler(this.audioTimer_Tick);
+            // 
+            // imageButton11
+            // 
+            this.imageButton11.BackColor = System.Drawing.Color.Transparent;
+            this.imageButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButton11.Location = new System.Drawing.Point(68, 177);
+            this.imageButton11.Name = "imageButton11";
+            this.imageButton11.Size = new System.Drawing.Size(37, 19);
+            this.imageButton11.TabIndex = 12;
+            this.imageButton11.Tag = "audio";
+            this.imageButton11.Text = "imageButton11";
+            this.imageButton11.Click += new System.EventHandler(this.ControlButton_Click);
+            // 
+            // imageButton10
+            // 
+            this.imageButton10.BackColor = System.Drawing.Color.Transparent;
+            this.imageButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButton10.Location = new System.Drawing.Point(111, 177);
+            this.imageButton10.Name = "imageButton10";
+            this.imageButton10.Size = new System.Drawing.Size(37, 19);
+            this.imageButton10.TabIndex = 13;
+            this.imageButton10.Tag = "radio";
+            this.imageButton10.Text = "imageButton10";
+            this.imageButton10.Click += new System.EventHandler(this.ControlButton_Click);
+            // 
+            // imageButton1
+            // 
+            this.imageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.imageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButton1.Location = new System.Drawing.Point(23, 70);
+            this.imageButton1.Name = "imageButton1";
+            this.imageButton1.Size = new System.Drawing.Size(37, 23);
+            this.imageButton1.TabIndex = 4;
+            this.imageButton1.Tag = "tv_power";
+            this.imageButton1.Text = "imageButton1";
+            this.imageButton1.Click += new System.EventHandler(this.ControlButton_Click);
             // 
             // imageButton42
             // 
@@ -267,18 +725,6 @@
             this.imageButton41.Tag = "next";
             this.imageButton41.Text = "imageButton41";
             this.imageButton41.Click += new System.EventHandler(this.ControlButton_Click);
-            // 
-            // imageButton40
-            // 
-            this.imageButton40.BackColor = System.Drawing.Color.Transparent;
-            this.imageButton40.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageButton40.Location = new System.Drawing.Point(37, 310);
-            this.imageButton40.Name = "imageButton40";
-            this.imageButton40.Size = new System.Drawing.Size(27, 24);
-            this.imageButton40.TabIndex = 41;
-            this.imageButton40.Tag = "previous";
-            this.imageButton40.Text = "imageButton40";
-            this.imageButton40.Click += new System.EventHandler(this.ControlButton_Click);
             // 
             // imageButton39
             // 
@@ -604,30 +1050,6 @@
             this.imageButton15.Text = "imageButton15";
             this.imageButton15.Click += new System.EventHandler(this.ControlButton_Click);
             // 
-            // imageButton10
-            // 
-            this.imageButton10.BackColor = System.Drawing.Color.Transparent;
-            this.imageButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageButton10.Location = new System.Drawing.Point(111, 177);
-            this.imageButton10.Name = "imageButton10";
-            this.imageButton10.Size = new System.Drawing.Size(37, 19);
-            this.imageButton10.TabIndex = 13;
-            this.imageButton10.Tag = "radio";
-            this.imageButton10.Text = "imageButton10";
-            this.imageButton10.Click += new System.EventHandler(this.ControlButton_Click);
-            // 
-            // imageButton11
-            // 
-            this.imageButton11.BackColor = System.Drawing.Color.Transparent;
-            this.imageButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageButton11.Location = new System.Drawing.Point(68, 177);
-            this.imageButton11.Name = "imageButton11";
-            this.imageButton11.Size = new System.Drawing.Size(37, 19);
-            this.imageButton11.TabIndex = 12;
-            this.imageButton11.Tag = "audio";
-            this.imageButton11.Text = "imageButton11";
-            this.imageButton11.Click += new System.EventHandler(this.ControlButton_Click);
-            // 
             // imageButton12
             // 
             this.imageButton12.BackColor = System.Drawing.Color.Transparent;
@@ -736,27 +1158,15 @@
             this.imageButton2.Text = "imageButton2";
             this.imageButton2.Click += new System.EventHandler(this.ControlButton_Click);
             // 
-            // imageButton1
-            // 
-            this.imageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.imageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imageButton1.Location = new System.Drawing.Point(23, 70);
-            this.imageButton1.Name = "imageButton1";
-            this.imageButton1.Size = new System.Drawing.Size(37, 23);
-            this.imageButton1.TabIndex = 2;
-            this.imageButton1.Tag = "tv_power";
-            this.imageButton1.Text = "imageButton1";
-            this.imageButton1.Click += new System.EventHandler(this.ControlButton_Click);
-            // 
             // RemoteForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(177, 716);
-            this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.imageButton43);
+            this.ClientSize = new System.Drawing.Size(859, 715);
+            this.Controls.Add(this.imageButton11);
+            this.Controls.Add(this.imageButton10);
+            this.Controls.Add(this.imageButton1);
             this.Controls.Add(this.imageButton42);
             this.Controls.Add(this.imageButton41);
-            this.Controls.Add(this.imageButton40);
             this.Controls.Add(this.imageButton39);
             this.Controls.Add(this.imageButton38);
             this.Controls.Add(this.imageButton37);
@@ -784,8 +1194,6 @@
             this.Controls.Add(this.imageButton13);
             this.Controls.Add(this.imageButton14);
             this.Controls.Add(this.imageButton15);
-            this.Controls.Add(this.imageButton10);
-            this.Controls.Add(this.imageButton11);
             this.Controls.Add(this.imageButton12);
             this.Controls.Add(this.imageButton7);
             this.Controls.Add(this.imageButton8);
@@ -795,32 +1203,41 @@
             this.Controls.Add(this.imageButton4);
             this.Controls.Add(this.imageButton3);
             this.Controls.Add(this.imageButton2);
-            this.Controls.Add(this.imageButton1);
-            this.Controls.Add(this.remotePictureBox);
+            this.Controls.Add(this.ProgrammListPanel);
+            this.Controls.Add(this.RemotePanel);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(193, 754);
+            this.MaximumSize = new System.Drawing.Size(875, 754);
             this.MinimumSize = new System.Drawing.Size(193, 754);
             this.Name = "RemoteForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Fernbedienung";
             this.Shown += new System.EventHandler(this.RemoteForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.remotePictureBox)).EndInit();
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.RemotePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.remotePictureBox)).EndInit();
+            this.ProgrammListPanel.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabText.ResumeLayout(false);
+            this.tabText.PerformLayout();
+            this.tabVorschau.ResumeLayout(false);
+            this.contextMenuStrip.ResumeLayout(false);
+            this.HeaderPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox remotePictureBox;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
@@ -868,7 +1285,6 @@
         private MSoft.ImageButton imageButton37;
         private MSoft.ImageButton imageButton38;
         private MSoft.ImageButton imageButton39;
-        private MSoft.ImageButton imageButton40;
         private MSoft.ImageButton imageButton41;
         private MSoft.ImageButton imageButton42;
         private MSoft.ImageButton imageButton43;
@@ -880,6 +1296,48 @@
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel volumeLabel;
+        private System.Windows.Forms.ToolStripMenuItem webinterfaceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oscamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.Panel RemotePanel;
+        private System.Windows.Forms.PictureBox remotePictureBox;
+        private System.Windows.Forms.Panel ProgrammListPanel;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Panel HeaderPanel;
+        private System.Windows.Forms.ComboBox serviceBox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button prevButton;
+        private System.Windows.Forms.TextBox timeBox;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.RichTextBox richTextBox;
+        private System.Windows.Forms.Timer refreshTimer;
+        private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.ImageList channelImageList;
+        private System.Windows.Forms.Timer audioTimer;
+        private System.Windows.Forms.ContextMenuStrip audioMenuStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel audioLabel;
+        private System.Windows.Forms.ToolStripStatusLabel timeOutLabel;
+        private System.Windows.Forms.Button epgButton;
+        private MSoft.ImageButton imageButton40;
+        private System.Windows.Forms.ToolStripMenuItem audioToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem ePGEinträgeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ePGSucheToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem timerHinzufügenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tvInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem googleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iMDbToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem streamAnsehenToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabText;
+        private System.Windows.Forms.TabPage tabVorschau;
+        private EPGUserControl epgUserControl;
     }
 }
 

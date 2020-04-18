@@ -22,21 +22,21 @@ namespace vuRemote
         const Boolean NEXT = false;
 
         //private string vURL;
-        private string vServiceURL;
-        private string vEPGURL;
-        private string vEPGURLNext;
-        private string vSenderURL;
+        private readonly string vServiceURL;
+        private readonly string vEPGURL;
+        private readonly string vEPGURLNext;
+        private readonly string vSenderURL;
         //private string vAddTimerURL;
         private DateTime vTime = DateTime.Now;
-        private string vUrlGoogle;
-        private string vUrlIMDb;
-        private string vGetChannelURL;
-        private string vGetAudioURL;
-        private string vSetAudioURL;
-        private string vStreamUrl;
-        private string vMediaPlayer;
-        private List<string> vServiceList = new List<string>();
-        private Boolean vDayLightSaving;
+        private readonly string vUrlGoogle;
+        private readonly string vUrlIMDb;
+        private readonly string vGetChannelURL;
+        private readonly string vGetAudioURL;
+        private readonly string vSetAudioURL;
+        private readonly string vStreamUrl;
+        private readonly string vMediaPlayer;
+        private readonly List<string> vServiceList = new List<string>();
+        private readonly Boolean vDayLightSaving;
         private static Regex vRegEx;
 
         public ProgrammList(Point StartPoint): this()
@@ -90,7 +90,39 @@ namespace vuRemote
             timeBox.Text = String.Format("{0:00}:{1:00}", vTime.Hour, vTime.Minute);
             //Update Timer aktiv schalten
             updateTimer.Enabled = true;
+
+            //Refresh Timer für das 1. Init scharf machen
+            refreshTimer.Enabled = true;
+            refreshTimer.Interval = 500;
+            refreshTimer.Tick -= refreshTimer_Tick;
+            refreshTimer.Tick += new EventHandler(InitList_Tick); 
+        }
+
+        //Liste das 1. Mal laden, wird zeitverzögert aufgerufen
+        //damit das Fenster gleich sichtbar ist
+        private void InitList_Tick(object sender, EventArgs e)
+        {
+            //disablen, damit wir nicht noch mal aufgerufen werden
+            refreshTimer.Enabled = false;
+
+            //Read Services --> löst auch gleich GenerateEPGList aus
+            this.ReadServices();
+
+            //aktuellen Kanal ermitteln
+            ReadActChannel();
+
+            //auf den 1. Eintrag stellen
+            if (this.listView1.Items.Count > 0)
+            {
+                this.listView1.Items[0].Focused = true;
+                this.listView1.Items[0].Selected = true;
+            }
+
+            //auf aktuellen Eintrag stellen
+            toolStripStatusLabel_Click(sender, e);
+
             //Refresh Timer scharf machen
+            IniFile lIni = new IniFile();
             Int16 intervall;
             try
             {
@@ -102,15 +134,11 @@ namespace vuRemote
             }
             if (intervall > 0)
             {
+                refreshTimer.Tick -= InitList_Tick;
+                refreshTimer.Tick += new EventHandler(refreshTimer_Tick);
                 refreshTimer.Enabled = true;
                 refreshTimer.Interval = intervall * 60000;
             }
-
-            //Read Services --> löst auch gleich GenerateEPGList aus
-            this.ReadServices();
-
-            //aktuellen Kanal ermitteln
-            ReadActChannel();
         }
 
         //Services ermitteln: Favouriten, ...
@@ -169,6 +197,7 @@ namespace vuRemote
             lRequest.Timeout = 30000;
             try
             {
+                this.timeOutLabel.Text = "";
                 // Get the response.
                 WebResponse lResponse = lRequest.GetResponse();
 
@@ -188,33 +217,13 @@ namespace vuRemote
             catch
             {
                 //Timeout abfangen
-                MessageBox.Show("Request timed out");
+                //MessageBox.Show("Request timed out");
+                this.timeOutLabel.Text = "Request timed out";
                 return ""; //Programm verlassen
 
             }
         }
 
-        private string PrintDayOfWeek(DayOfWeek day)
-        {
-            switch (day){
-                case DayOfWeek.Monday: 
-                    return "Mo";
-                case DayOfWeek.Tuesday:
-                    return "Di";
-                case DayOfWeek.Wednesday:
-                    return "Mi";
-                case DayOfWeek.Thursday:
-                    return "Do";
-                case DayOfWeek.Friday:
-                    return "Fr";
-                case DayOfWeek.Saturday:
-                    return "Sa";
-                case DayOfWeek.Sunday:
-                    return "So";
-            }
-            return "  ";
-
-        }
 
         //private void GenerateChannelTable()
         //{
@@ -320,7 +329,7 @@ namespace vuRemote
                         // je nach Sommer oder Winterzeit muss die Uhrzeit korrigiert werden
                         // Ticks uns UnixEpoch sind mindesten 1h unterschiedlich
                         if (vDayLightSaving) { UnixEpochStart = UnixEpochStart.AddHours(2); } else { UnixEpochStart = UnixEpochStart.AddHours(1); }
-                        zeit = String.Format("{0} {1:00}:{2:00}", PrintDayOfWeek(UnixEpochStart.DayOfWeek), UnixEpochStart.Hour, UnixEpochStart.Minute);
+                        zeit = String.Format("{0} {1:00}:{2:00}", DateTools.PrintDayOfWeek(UnixEpochStart.DayOfWeek), UnixEpochStart.Hour, UnixEpochStart.Minute);
                     } else { 
                         zeit = "";
                         startTime = "";
@@ -401,6 +410,14 @@ namespace vuRemote
             ReadActChannel();
         }
 
+        //unbekannte Zeichen aus dem Text entfernen
+        private string ReplaceChars(string aText)
+        {
+            aText = aText.Replace("&quot;", "'");
+            aText = aText.Replace("\\n", "\n"); //atv sendet manchmal Müll
+            return aText;
+        }
+
         private void OnSelectedIndexChange(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count <= 0)
@@ -409,8 +426,8 @@ namespace vuRemote
             }
             //Zeit + Info ausgeben
             richTextBox.Text = listView1.SelectedItems[0].SubItems[3].Text + "\n" + 
-                               listView1.SelectedItems[0].SubItems[4].Text + "\n \n"  + 
-                               listView1.SelectedItems[0].SubItems[8].Text; 
+                               listView1.SelectedItems[0].SubItems[4].Text + "\n \n"  +
+                               ReplaceChars(listView1.SelectedItems[0].SubItems[8].Text); 
         }
 
         private void OnEPGClick(object sender, EventArgs e)
@@ -777,6 +794,7 @@ namespace vuRemote
             aTitle = aTitle.Replace("\u009d", "");
             aTitle = aTitle.Replace("\u009e", "");
             aTitle = aTitle.Replace("\u009f", "");
+            aTitle = aTitle.Replace("&quot;", "'");
             return aTitle;
         }
         //Änderung des Bouquets
@@ -894,6 +912,11 @@ namespace vuRemote
                 listView1.Items[lIndex].Selected = true;
                 listView1.Select(); //Focus, damit das Item blau gezeichnet wird
             }
+        }
+
+        private void richTextBox_Resize(object sender, EventArgs e)
+        {
+            epgButton.Left = richTextBox.Size.Width - epgButton.Width - 19;
         }
 
     }

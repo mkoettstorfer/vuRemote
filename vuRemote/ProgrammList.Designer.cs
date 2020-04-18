@@ -48,8 +48,10 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.audioLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeOutLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.epgButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.serviceBox = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -110,13 +112,13 @@
             this.streamAnsehenToolStripMenuItem,
             this.audioToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(169, 214);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 236);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Image = global::vuRemote.Properties.Resources.move;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Sender wechslen";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ChangeChannelClick);
             // 
@@ -124,14 +126,14 @@
             // 
             this.ePGEinträgeToolStripMenuItem.Image = global::vuRemote.Properties.Resources.list;
             this.ePGEinträgeToolStripMenuItem.Name = "ePGEinträgeToolStripMenuItem";
-            this.ePGEinträgeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ePGEinträgeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ePGEinträgeToolStripMenuItem.Text = "EPG Einträge";
             this.ePGEinträgeToolStripMenuItem.Click += new System.EventHandler(this.OnEPGClick);
             // 
             // ePGSucheToolStripMenuItem
             // 
             this.ePGSucheToolStripMenuItem.Name = "ePGSucheToolStripMenuItem";
-            this.ePGSucheToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ePGSucheToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ePGSucheToolStripMenuItem.Text = "EPG Suche";
             this.ePGSucheToolStripMenuItem.Click += new System.EventHandler(this.ePGSucheToolStripMenuItem_Click);
             // 
@@ -140,18 +142,18 @@
             this.timerHinzufügenToolStripMenuItem.Enabled = false;
             this.timerHinzufügenToolStripMenuItem.Image = global::vuRemote.Properties.Resources.watch;
             this.timerHinzufügenToolStripMenuItem.Name = "timerHinzufügenToolStripMenuItem";
-            this.timerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.timerHinzufügenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timerHinzufügenToolStripMenuItem.Text = "Timer hinzufügen";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(165, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // tvInfoToolStripMenuItem
             // 
             this.tvInfoToolStripMenuItem.Name = "tvInfoToolStripMenuItem";
-            this.tvInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.tvInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tvInfoToolStripMenuItem.Text = "Tv Info";
             this.tvInfoToolStripMenuItem.Click += new System.EventHandler(this.tvInfoToolStripMenuItem_Click);
             // 
@@ -159,7 +161,7 @@
             // 
             this.googleToolStripMenuItem.Image = global::vuRemote.Properties.Resources.google;
             this.googleToolStripMenuItem.Name = "googleToolStripMenuItem";
-            this.googleToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.googleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.googleToolStripMenuItem.Text = "Google";
             this.googleToolStripMenuItem.Click += new System.EventHandler(this.OnGoogleClick);
             // 
@@ -167,20 +169,20 @@
             // 
             this.iMDbToolStripMenuItem.Image = global::vuRemote.Properties.Resources.imdb;
             this.iMDbToolStripMenuItem.Name = "iMDbToolStripMenuItem";
-            this.iMDbToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.iMDbToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.iMDbToolStripMenuItem.Text = "IMDb";
             this.iMDbToolStripMenuItem.Click += new System.EventHandler(this.iMDbToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(165, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
             // 
             // streamAnsehenToolStripMenuItem
             // 
             this.streamAnsehenToolStripMenuItem.Image = global::vuRemote.Properties.Resources.play;
             this.streamAnsehenToolStripMenuItem.Name = "streamAnsehenToolStripMenuItem";
-            this.streamAnsehenToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.streamAnsehenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.streamAnsehenToolStripMenuItem.Text = "Stream ansehen";
             this.streamAnsehenToolStripMenuItem.Click += new System.EventHandler(this.streamAnsehenToolStripMenuItem_Click);
             // 
@@ -188,14 +190,14 @@
             // 
             this.audioToolStripMenuItem.DropDown = this.audioMenuStrip;
             this.audioToolStripMenuItem.Name = "audioToolStripMenuItem";
-            this.audioToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.audioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.audioToolStripMenuItem.Text = "Audio";
             // 
             // audioMenuStrip
             // 
             this.audioMenuStrip.Name = "audioMenuStrip";
             this.audioMenuStrip.OwnerItem = this.audioToolStripMenuItem;
-            this.audioMenuStrip.Size = new System.Drawing.Size(61, 4);
+            this.audioMenuStrip.Size = new System.Drawing.Size(181, 26);
             // 
             // channelImageList
             // 
@@ -207,7 +209,8 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
-            this.audioLabel});
+            this.audioLabel,
+            this.timeOutLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 694);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(678, 22);
@@ -227,18 +230,31 @@
             // 
             // audioLabel
             // 
+            this.audioLabel.AutoSize = false;
+            this.audioLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.audioLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.audioLabel.Name = "audioLabel";
-            this.audioLabel.Size = new System.Drawing.Size(45, 17);
+            this.audioLabel.Size = new System.Drawing.Size(245, 17);
             this.audioLabel.Text = "Audio: ";
+            this.audioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timeOutLabel
+            // 
+            this.timeOutLabel.Name = "timeOutLabel";
+            this.timeOutLabel.Size = new System.Drawing.Size(17, 17);
+            this.timeOutLabel.Text = "--";
             // 
             // richTextBox
             // 
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.richTextBox.Location = new System.Drawing.Point(0, 0);
             this.richTextBox.Name = "richTextBox";
+            this.richTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBox.Size = new System.Drawing.Size(678, 126);
             this.richTextBox.TabIndex = 2;
             this.richTextBox.Text = "";
+            this.richTextBox.Resize += new System.EventHandler(this.richTextBox_Resize);
             // 
             // splitContainer1
             // 
@@ -253,10 +269,26 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.epgButton);
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox);
             this.splitContainer1.Size = new System.Drawing.Size(678, 661);
             this.splitContainer1.SplitterDistance = 531;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // epgButton
+            // 
+            this.epgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.epgButton.AutoSize = true;
+            this.epgButton.FlatAppearance.BorderSize = 0;
+            this.epgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.epgButton.Location = new System.Drawing.Point(618, 3);
+            this.epgButton.Margin = new System.Windows.Forms.Padding(0);
+            this.epgButton.Name = "epgButton";
+            this.epgButton.Size = new System.Drawing.Size(41, 25);
+            this.epgButton.TabIndex = 3;
+            this.epgButton.Text = "EPG";
+            this.epgButton.UseVisualStyleBackColor = true;
+            this.epgButton.Click += new System.EventHandler(this.OnEPGClick);
             // 
             // panel1
             // 
@@ -370,6 +402,7 @@
             this.statusStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -414,6 +447,8 @@
         private System.Windows.Forms.ToolStripMenuItem audioToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip audioMenuStrip;
         private System.Windows.Forms.Timer audioTimer;
+        private System.Windows.Forms.ToolStripStatusLabel timeOutLabel;
+        private System.Windows.Forms.Button epgButton;
 
     }
 }

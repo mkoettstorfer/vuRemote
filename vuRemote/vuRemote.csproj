@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>vuRemote</RootNamespace>
     <AssemblyName>vuRemote</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.5.1.%2a</ApplicationVersion>
+    <ApplicationVersion>0.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -39,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -48,12 +49,22 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\sync.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>vuRemote.vuRemote</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|x86'">
+    <OutputPath>bin\x86\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -72,78 +83,84 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox.cs">
+    <Compile Include="Forms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox.designer.cs">
+    <Compile Include="Forms\AboutBox.designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="ArchivList.cs">
+    <Compile Include="Forms\ArchivList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArchivList.designer.cs">
+    <Compile Include="Forms\ArchivList.designer.cs">
       <DependentUpon>ArchivList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeviceInfo.cs">
+    <Compile Include="Forms\DeviceInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeviceInfo.designer.cs">
+    <Compile Include="Forms\DeviceInfo.designer.cs">
       <DependentUpon>DeviceInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="EPGDetail.cs">
+    <Compile Include="Forms\EPGDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EPGDetail.designer.cs">
+    <Compile Include="Forms\EPGDetail.designer.cs">
       <DependentUpon>EPGDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="EPGSearch.cs">
+    <Compile Include="Forms\EPGSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EPGSearch.designer.cs">
+    <Compile Include="Forms\EPGSearch.designer.cs">
       <DependentUpon>EPGSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="IniFile.cs" />
+    <Compile Include="Helper\DateTools.cs" />
+    <Compile Include="Helper\Coverters.cs" />
+    <Compile Include="Forms\EPGUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EPGUserControl.Designer.cs">
+      <DependentUpon>EPGUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\IniFile.cs" />
     <Compile Include="MSoft\ImageButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NullFx\IPField.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="NullFx\IPField.cs" />
     <Compile Include="ProgrammList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProgrammList.designer.cs">
       <DependentUpon>ProgrammList.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProgressForm.cs">
+    <Compile Include="Forms\ProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProgressForm.designer.cs">
+    <Compile Include="Forms\ProgressForm.designer.cs">
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RemoteSender.cs" />
-    <Compile Include="RenameTitle.cs">
+    <Compile Include="Helper\RemoteSender.cs" />
+    <Compile Include="Forms\RenameTitle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RenameTitle.Designer.cs">
+    <Compile Include="Forms\RenameTitle.Designer.cs">
       <DependentUpon>RenameTitle.cs</DependentUpon>
     </Compile>
-    <Compile Include="setting.cs">
+    <Compile Include="Forms\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="setting.designer.cs">
-      <DependentUpon>setting.cs</DependentUpon>
+    <Compile Include="Forms\SettingForm.designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimerList.cs">
+    <Compile Include="Forms\TimerList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimerList.designer.cs">
+    <Compile Include="Forms\TimerList.designer.cs">
       <DependentUpon>TimerList.cs</DependentUpon>
     </Compile>
-    <Compile Include="VLCForm.cs">
+    <Compile Include="Forms\VLCForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VLCForm.Designer.cs">
+    <Compile Include="Forms\VLCForm.Designer.cs">
       <DependentUpon>VLCForm.cs</DependentUpon>
     </Compile>
     <Compile Include="vuRemote.cs" />
@@ -154,20 +171,23 @@
     <Compile Include="RemoteControl.Designer.cs">
       <DependentUpon>RemoteControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AboutBox.resx">
+    <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ArchivList.resx">
+    <EmbeddedResource Include="Forms\ArchivList.resx">
       <DependentUpon>ArchivList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeviceInfo.resx">
+    <EmbeddedResource Include="Forms\DeviceInfo.resx">
       <DependentUpon>DeviceInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EPGDetail.resx">
+    <EmbeddedResource Include="Forms\EPGDetail.resx">
       <DependentUpon>EPGDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EPGSearch.resx">
+    <EmbeddedResource Include="Forms\EPGSearch.resx">
       <DependentUpon>EPGSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EPGUserControl.resx">
+      <DependentUpon>EPGUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MSoft\ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
@@ -175,7 +195,7 @@
     <EmbeddedResource Include="ProgrammList.resx">
       <DependentUpon>ProgrammList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressForm.resx">
+    <EmbeddedResource Include="Forms\ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -191,16 +211,16 @@
     <EmbeddedResource Include="RemoteControl.resx">
       <DependentUpon>RemoteControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RenameTitle.resx">
+    <EmbeddedResource Include="Forms\RenameTitle.resx">
       <DependentUpon>RenameTitle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="setting.resx">
-      <DependentUpon>setting.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimerList.resx">
+    <EmbeddedResource Include="Forms\TimerList.resx">
       <DependentUpon>TimerList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VLCForm.resx">
+    <EmbeddedResource Include="Forms\VLCForm.resx">
       <DependentUpon>VLCForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
